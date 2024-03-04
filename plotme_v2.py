@@ -4,13 +4,14 @@ import base64
 import requests
 import json
 import pandas as pd
-#import seaborn as sns
 import ast
 import plotly.express as px
+
+
 def generate_plot_details(plot_image):
     
     # OpenAI API Key
-    api_key = "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"
+    api_key = ""
 
     # Function to encode the image
     def encode_image(image_path):
@@ -58,13 +59,11 @@ def generate_plot_details(plot_image):
     NumberOfGraphs = len(jdata.split('\n'))
     st.write("Number of graphs identified : "+str(NumberOfGraphs))
     return jdata
-    #res = ast.literal_eval(jdata.split('\n')[0])
-
+    
 
 def format_gpt_out(jdata):
 
   listOfGraphs = jdata.split('\n')
-  #graph_dict = ast.literal_eval(listOfGraphs[0])
   return listOfGraphs
 
 
